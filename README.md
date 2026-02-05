@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/GTOP-Network/GTOP-Phase1/main/images/20260204160919701.png)
+![logo](https://raw.githubusercontent.com/GTOP-Network/GTOP-Phase1/main/images/GTOP-logo.png)
 # GTOP: Genotype Tissues-Plasma Omics Project
 
 GTOP is a long-read multi-omics atlas comprising transcriptomic and genetic variation data from 33 tissues of 160 healthy Chinese donors. The project expands tissue coverage beyond existing multi-tissue resources and enables systematic characterization of regulatory variants, complex genomic features, and transcript isoform diversity that are poorly captured by short-read sequencing. As a population-representative resource for East Asians, GTOP addresses a major gap in current functional genomics references and supports studies of regulatory variation, disease mechanisms, and population-specific genetic architecture.
