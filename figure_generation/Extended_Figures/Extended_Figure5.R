@@ -15,7 +15,7 @@ library(pheatmap)
 setwd("/media/london_A/mengxin/GTOP_code/extend/extend_145/input")
 
 
-# Extended Fig.6a:  Visualization of the effect size of the same QTL pair in different tissues ------------------------------------------------------------------
+# Extended.Fig.5a:  Visualization of the effect size of the same QTL pair in different tissues ------------------------------------------------------------------
 
 cor <- fread("ExtendFig5a.txt",data.table = FALSE)
 rownames(cor) <- cor[, 1]
@@ -34,7 +34,7 @@ pheatmap(cor,
          fontsize_col = 9)
 
 
-# Extended Fig.6b: tissue specific QTL number  --------------------------------------------------------
+# Extended.Fig.5b: tissue specific QTL number  --------------------------------------------------------
 
 plot_df <- fread("ExtendFig5b.txt") %>% mutate(Specific_Tissue = reorder(Specific_Tissue, -total))
 plot_df$QTL <- factor(plot_df$QTL, levels = c( "SV","TR", "SNV"))
@@ -48,7 +48,7 @@ ggplot(plot_df, aes(x = Specific_Tissue, y = n, fill = QTL)) +
         axis.text.y = element_text(color = "black"),
         axis.title = element_text(color = "black"))
 
-# Extended Fig.6c: tissue-sharing with TSS  --------------------------------------------------------
+# Extended.Fig.5c: tissue-sharing with TSS  --------------------------------------------------------
 
 dat <- fread("ExtendFig5c.txt") %>% dplyr::filter(QTL %in% "SNV")
 ggplot(dat, aes(x = TSS_dis, group = tissue_group, color = tissue_group)) +
