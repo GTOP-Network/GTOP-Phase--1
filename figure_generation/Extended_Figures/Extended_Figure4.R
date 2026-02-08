@@ -15,7 +15,7 @@ library(ggbreak)
 library(ggrastr)
 setwd("/media/london_A/mengxin/GTOP_code/extend/extend_145/input")
 
-# Extended Fig.4a ---------------------------------------------------------
+# Extended.Fig.4a ---------------------------------------------------------
 
 qq_plot_list <- readRDS("qq_plot.all_tissue.RDS")
 p <- ggplot(qq_plot_list,aes(x=ExpP,y=ObservedP,color=Tissue)) + 
@@ -38,7 +38,7 @@ dat <- readRDS("ExtendFig4b.RDS")
 ggplot(dat,aes(x=distance,color=VarType)) + geom_density(size=1.5) + theme_pubr() +
   scale_color_manual(values = c("#7B88A8","#609561","#983927"))
 
-# Extended Fig.4c:  torus enrichment ------------------------------------------------------------------
+# Extended.Fig.4c:  torus enrichment ------------------------------------------------------------------
 
 order <- rev(c("enhancer","promoter","open chromatin region","CTCF binding site","TF binding site","3 prime UTR","5 prime UTR","frameshift","intron","missense","NC transcript","splice acceptor","splice donor","splice region","stop gained", "synonymous"))
 
@@ -97,7 +97,7 @@ ggplot(effect_data)+ geom_violin(aes(y=QTL, x=slope, fill=VarSubType),
   scale_fill_manual(values = c("SNV"="#c9c9c9","STR"="#0f3c7a","VNTR"="#ab889a","INS"="#b55f60","DEL"="#577b95"))
 
 
-# Extended Fig.4e: larger sv length with higher effect size  --------------------------------------------------------
+# Extended.Fig.4e: larger sv length with higher effect size  --------------------------------------------------------
 sv_qtl <- effect_data[effect_data$VarType=="SV" & effect_data$QTL=="eQTL",] %>%
   mutate(length=as.integer(word(variant_id,start=5,end=5,sep="\\_")),
          group=case_when(length < 100 ~ "<100bp",
@@ -121,7 +121,7 @@ ggplot(sv_qtl, aes(x = group, y = abs(slope), fill = group)) +
 
 
 
-# Extended Fig.4f: eGene constraint score ---------------------------------------------------
+# Extended.Fig.4f: eGene constraint score ---------------------------------------------------
 
 fet_plot <- fread("ExtendFig4f.eGene_constraint.txt") %>%
   mutate(log2OR = log2(OR),
@@ -144,7 +144,7 @@ ggplot(fet_plot, aes(y = VarSubType, x = log2OR, fill = VarSubType)) +
   scale_fill_manual(values = c("SNV"="#c9c9c9","STR"="#0f3c7a","VNTR"="#ab889a","INS"="#b55f60","DEL"="#577b95"))
 
 
-# Extended Fig.5f: eGene constraint score correlated with effect size---------------------------------------------
+# Extended.Fig.5f: eGene constraint score correlated with effect size---------------------------------------------
 library(broom)
 bin_stats <- readRDS("ExtendFig4g.RDS")
 
